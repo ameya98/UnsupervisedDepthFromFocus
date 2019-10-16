@@ -12,6 +12,7 @@ import cv2
 import numpy as np
 
 parser = argparse.ArgumentParser(description='PyTorch Unsupervised DFF')
+parser.add_argument('input_dir', type=str, help='Input directory.')
 parser.add_argument('--lr', type=float, default=2e-5)
 parser.add_argument('--wd', type=float, default=5e-5)
 parser.add_argument('--batch-size', type=int, default=3)
@@ -42,7 +43,7 @@ if not os.path.exists(abs_path):
 # Data loading code
 train_transform = Augmentation()
 
-NYU_dataset = NYUDataset('path/to/NYU/', transforms=train_transform, scale=args.out_scale, scale2=args.in_scale)
+NYU_dataset = NYUDataset(args.input_dir, transforms=train_transform, scale=args.out_scale, scale2=args.in_scale)
 NYU_dataloader = DataLoader(NYU_dataset, torch.cuda.device_count()*args.batch_size, shuffle=True, num_workers=3, drop_last=True)
 
 net = Dense_ASPP_SA()
