@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Function
 
-import gauss_psf
+import gauss_psf_cuda
 
 
 class GaussPSFFunction(Function):
