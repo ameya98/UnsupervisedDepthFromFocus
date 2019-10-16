@@ -6,7 +6,7 @@ setup(
     ext_modules=[
         CUDAExtension('gauss_psf_cuda', [
             'gauss_psf_cuda.cpp',
-            'gauss_psf_kernel.cu',
+            'gauss_psf_cuda_kernel.cu',
         ]),
     ],
     cmdclass={

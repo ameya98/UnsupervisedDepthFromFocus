@@ -14,7 +14,8 @@ The implementation is based on the architectures of [DeepLabV3+](https://github.
 ### Gaussian PSF Layer
 In order to build the Gaussian PSF layer on your own machine, run the following line
 ```
-python ext/setup.py install
+cd ext
+python setup.py install
 ```
 
 ## Datasets
